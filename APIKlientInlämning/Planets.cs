@@ -3,7 +3,6 @@ using System.Text.Json.Serialization;
 
 public class Planets
 {
-
     public string name { get; set; }
     public string climate { get; set; }
     public string diameter { get; set; }
@@ -20,5 +19,4 @@ public class Planets
     [JsonPropertyName("surface_water")]
     public string surfaceWater { get; set; }
     public string terrain { get; set; }
-
 }
