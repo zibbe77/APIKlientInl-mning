@@ -12,16 +12,23 @@ Thread.Sleep(300);
 
 if (response.IsSuccessful)
 {
+    #region Deserilaze
+
     Planets p = JsonSerializer.Deserialize<Planets>(response.Content);
 
-    Planets Planets = new Planets();
+    #endregion
+    #region Reflections 
 
-    PropertyInfo[] properties = typeof(Planets).GetProperties();
-    foreach (PropertyInfo property in properties)
+    Type _type;
+    _type = typeof(Planets);
+    var properties = _type.GetProperties();
+
+    foreach (var e in properties)
     {
-        Console.WriteLine(property.Module);
-
-        Console.WriteLine("");
+        System.Console.WriteLine(e);
     }
     Console.ReadLine();
+
+    #endregion
+
 }
